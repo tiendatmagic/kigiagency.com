@@ -1,0 +1,37 @@
+---
+const projects = [
+	{ category: "Thời trang", title: "Xây dựng kênh TikTok thời trang", image: "/images/project-fashion.jpg" },
+	{ category: "Ẩm thực", title: "Quảng bá thương hiệu ẩm thực Nha Trang", image: "/images/project-food.jpg" },
+	{ category: "Mỹ phẩm", title: "Chiến dịch quảng cáo Facebook mỹ phẩm", image: "/images/project-cosmetics.jpg" },
+	{ category: "Công nghệ", title: "Thiết kế Website & SEO tổng thể", image: "/images/project-tech.jpg" },
+];
+---
+<section id="projects" class="py-20 lg:py-32 bg-white">
+	<div class="section-shell">
+		<!-- Section Header -->
+		<div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end mb-16">
+			<div class="space-y-4">
+				<div class="tag">✨ Sản phẩm thực tế</div>
+				<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">Dự án đã triển khai nổi bật</h2>
+			</div>
+			<p class="max-w-md text-slate-500 text-sm">
+				Chúng tôi thiết kế và vận hành các chiến dịch trên tinh thần tôn trọng bản sắc thương hiệu của từng đối tác khách hàng.
+			</p>
+		</div>
+
+		<!-- Projects Grid -->
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{projects.map((project, index) => (
+				<article class="reveal k-card overflow-hidden h-full flex flex-col justify-between group" style={`transition-delay: ${index * 80}ms`}>
+					<div class="overflow-hidden aspect-[4/3] relative">
+						<img class="w-full h-full object-cover transition duration-500 group-hover:scale-105" src={project.image} alt={project.title} />
+					</div>
+					<div class="p-6 space-y-2">
+						<span class="text-xs font-bold uppercase tracking-wider text-[#02b3fd]">{project.category}</span>
+						<h3 class="text-lg font-bold text-deep-navy group-hover:text-[#02b3fd] transition-colors leading-snug">{project.title}</h3>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
