@@ -29,7 +29,7 @@ const featuredServices = [
 
 		<div class="grid gap-8 lg:grid-cols-3">
 			{featuredServices.map((pkg, index) => (
-				<article class={`reveal k-card relative flex flex-col justify-between h-full p-8 ${pkg.popular ? "border-2 border-[#02b3fd] shadow-[0_25px_55px_rgba(2,179,253,0.25)] scale-105" : ""}`} style={`transition-delay: ${index * 80}ms`}>
+				<article class={`reveal k-card relative flex flex-col justify-between h-full p-8 ${pkg.popular ? "border-2 border-[#02b3fd] shadow-[0_25px_55px_rgba(2,179,253,0.25)]" : ""}`} style={`transition-delay: ${index * 80}ms`}>
 					{pkg.popular && (
 						<span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#568fca] to-[#02b3fd] px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider shadow-md">
 							Khuyên dùng

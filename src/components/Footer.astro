@@ -8,10 +8,10 @@ const navItems = [
 	{ label: "Liên hệ", href: "#contact", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"/></svg>` },
 ];
 ---
-<footer class="bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9] text-slate-700 border-t border-slate-200">
+<footer class="bg-gradient-to-b from-[#e0f2fe]/90 to-[#f0f9ff]/90 text-slate-600 border-t border-[#02b3fd]/20">
 	<div class="section-shell py-16">
 		<!-- Banner Footer (Gradient rực rỡ bóng bẩy phối màu mới) -->
-		<div class="mb-12 grid gap-8 rounded-2xl bg-gradient-to-r from-[#215abd] via-[#568fca] to-[#02b3fd] p-8 lg:grid-cols-[1.2fr_.8fr] lg:p-12 shadow-[0_20px_50px_rgba(2,179,253,0.3)] relative overflow-hidden">
+		<div class="mb-12 grid gap-8 rounded-2xl bg-gradient-to-r from-[#215abd] via-[#568fca] to-[#02b3fd] p-8 lg:grid-cols-[1.2fr_.8fr] lg:p-12 shadow-[0_20px_50px_rgba(2,179,253,0.2)] border border-white/20 relative overflow-hidden">
 			<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
 			<div class="relative z-10 text-white">
 				<p class="text-sm font-bold uppercase tracking-wider text-white/90">KIGI Agency</p>
@@ -26,25 +26,25 @@ const navItems = [
 				<a class="btn-premium-outline !bg-transparent !text-white !border-white hover:!bg-white hover:!text-[#02b3fd]" href="mailto:info@kigiagency.com">Gửi Email</a>
 			</div>
 		</div>
-
+ 
 		<!-- Links Grid -->
-		<div class="grid gap-12 border-b border-slate-200 pb-12 md:grid-cols-2 lg:grid-cols-4">
+		<div class="grid gap-12 border-b border-[#02b3fd]/10 pb-12 md:grid-cols-2 lg:grid-cols-4">
 			<div class="space-y-4">
 				<div class="flex items-center gap-3">
-					<img src="/logo.jpg" alt="KIGI Agency Logo" class="h-10 w-auto rounded-lg object-contain shadow-sm border border-slate-200" />
+					<img src="/logo.jpg" alt="KIGI Agency Logo" class="h-10 w-auto rounded-lg object-contain shadow-sm border border-[#02b3fd]/10" />
 					<div>
 						<p class="text-xl font-black tracking-wider text-deep-navy">KIGI</p>
 						<p class="text-[10px] font-bold uppercase tracking-widest text-[#02b3fd]">Agency</p>
 					</div>
 				</div>
-				<p class="text-sm text-slate-500 leading-relaxed">
+				<p class="text-sm text-slate-600 leading-relaxed">
 					Đối tác tin cậy thiết kế Website chuẩn SEO và triển khai các giải pháp Marketing trực tuyến hiệu quả.
 				</p>
 			</div>
-
+ 
 			<div class="space-y-4">
 				<h3 class="text-lg font-bold text-deep-navy">Menu nhanh</h3>
-				<ul class="space-y-2 text-sm text-slate-500">
+				<ul class="space-y-2 text-sm text-slate-600">
 					{navItems.map((item) => (
 						<li>
 							<a class="hover:text-[#02b3fd] transition-colors" href={item.href}>{item.label}</a>
@@ -52,10 +52,10 @@ const navItems = [
 					))}
 				</ul>
 			</div>
-
+ 
 			<div class="space-y-4">
 				<h3 class="text-lg font-bold text-deep-navy">Dịch vụ cốt lõi</h3>
-				<ul class="space-y-2 text-sm text-slate-500">
+				<ul class="space-y-2 text-sm text-slate-600">
 					<li>Thiết kế Website UI/UX chuẩn SEO</li>
 					<li>Quản lý Fanpage và sáng tạo content</li>
 					<li>Chạy quảng cáo Facebook / Google / TikTok</li>
@@ -63,29 +63,29 @@ const navItems = [
 					<li>Tư vấn nhận diện thương hiệu</li>
 				</ul>
 			</div>
-
+ 
 			<div class="space-y-4">
 				<h3 class="text-lg font-bold text-deep-navy">Liên hệ trực tiếp</h3>
-				<div class="space-y-3 text-sm text-slate-500">
+				<div class="space-y-3 text-sm text-slate-600">
 					<p class="flex items-start gap-2">
-						<span class="font-bold text-deep-navy">Hotline:</span> 0563.555.535
+						<span class="font-bold text-deep-navy shrink-0 whitespace-nowrap">Hotline:</span> 0563.555.535
 					</p>
 					<p class="flex items-start gap-2">
-						<span class="font-bold text-deep-navy">Email:</span> info@kigiagency.com
+						<span class="font-bold text-deep-navy shrink-0 whitespace-nowrap">Email:</span> info@kigiagency.com
 					</p>
 					<p class="flex items-start gap-2">
-						<span class="font-bold text-deep-navy">Địa chỉ:</span> Số 25 - 26 Nguyễn Đình Chiểu, Phường Vĩnh Phước, TP. Nha Trang, Tỉnh Khánh Hòa
+						<span class="font-bold text-deep-navy shrink-0 whitespace-nowrap">Địa chỉ:</span> Số 25 - 26 Nguyễn Đình Chiểu, Phường Vĩnh Phước, TP. Nha Trang, Tỉnh Khánh Hòa
 					</p>
 				</div>
 			</div>
 		</div>
-
+ 
 		<!-- Bottom Footer Bar -->
-		<div class="flex flex-col gap-4 pt-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+		<div class="flex flex-col gap-4 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
 			<p>© 2026 KIGI Agency. All rights reserved.</p>
 			<div class="flex gap-6">
-				<a class="hover:text-deep-navy transition-colors" href="#">Chính sách bảo mật</a>
-				<a class="hover:text-deep-navy transition-colors" href="#">Điều khoản sử dụng</a>
+				<a class="hover:text-[#02b3fd] transition-colors" href="#">Chính sách bảo mật</a>
+				<a class="hover:text-[#02b3fd] transition-colors" href="#">Điều khoản sử dụng</a>
 			</div>
 		</div>
 	</div>
