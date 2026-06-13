@@ -20,15 +20,15 @@ const projects = [
 		</div>
 
 		<!-- Projects Grid -->
-		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+		<div class="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{projects.map((project, index) => (
 				<article class="reveal k-card overflow-hidden h-full flex flex-col justify-between group" style={`transition-delay: ${index * 80}ms`}>
 					<div class="overflow-hidden aspect-[4/3] relative">
 						<img class="w-full h-full object-cover transition duration-500 group-hover:scale-105" src={project.image} alt={project.title} />
 					</div>
-					<div class="p-6 space-y-2">
-						<span class="text-xs font-bold uppercase tracking-wider text-[#02b3fd]">{project.category}</span>
-						<h3 class="text-lg font-bold text-deep-navy group-hover:text-[#02b3fd] transition-colors leading-snug">{project.title}</h3>
+					<div class="p-3 sm:p-6 space-y-1 sm:space-y-2">
+						<span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#02b3fd]">{project.category}</span>
+						<h3 class="text-sm sm:text-lg font-bold text-deep-navy group-hover:text-[#02b3fd] transition-colors leading-snug">{project.title}</h3>
 					</div>
 				</article>
 			))}

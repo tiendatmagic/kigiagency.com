@@ -15,14 +15,14 @@ const workflow = [
 		</div>
 
 		<!-- Process Steps -->
-		<div class="grid gap-8 lg:grid-cols-4 relative">
+		<div class="grid grid-cols-2 gap-4 lg:grid-cols-4 relative">
 			{workflow.map((item, index) => (
-				<article class="reveal k-card relative h-full p-8 flex flex-col justify-between" style={`transition-delay: ${index * 80}ms`}>
-					<span class="absolute -right-2 -top-4 text-7xl font-extrabold text-slate-200/40 select-none z-0">{item.step}</span>
-					<div class="relative z-10 space-y-4">
-						<span class={`inline-block px-3 py-1 bg-gradient-to-r ${item.gradient} text-[#0f172a] text-xs font-bold rounded-lg uppercase tracking-wider`}>Bước {item.step}</span>
-						<h3 class="text-lg font-bold text-deep-navy pt-2">{item.title}</h3>
-						<p class="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+				<article class="reveal k-card relative h-full p-4 sm:p-8 flex flex-col justify-between" style={`transition-delay: ${index * 80}ms`}>
+					<span class="absolute -right-2 -top-2 sm:-top-4 text-5xl sm:text-7xl font-extrabold text-slate-200/40 select-none z-0">{item.step}</span>
+					<div class="relative z-10 space-y-2 sm:space-y-4">
+						<span class={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r ${item.gradient} text-[#0f172a] text-[10px] sm:text-xs font-bold rounded-lg uppercase tracking-wider`}>Bước {item.step}</span>
+						<h3 class="text-base sm:text-lg font-bold text-deep-navy pt-1 sm:pt-2">{item.title}</h3>
+						<p class="text-xs sm:text-sm text-slate-500 leading-relaxed">{item.text}</p>
 					</div>
 				</article>
 			))}

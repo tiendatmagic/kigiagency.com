@@ -20,52 +20,91 @@ const featuredServices = [
 	},
 ];
 ---
-<section class="py-20 lg:py-32 bg-gradient-to-b from-[#f2f3ff] to-[#faf8ff] border-t border-[#02b3fd]/10">
+<section class="py-20 lg:py-32 bg-gradient-to-b from-[#f2f3ff] to-[#faf8ff] border-t border-[#02b3fd]/10 overflow-hidden">
 	<div class="section-shell">
-		<div class="reveal text-center max-w-2xl mx-auto space-y-4 mb-16">
+		<div class="reveal text-center max-w-2xl mx-auto space-y-4 mb-12">
 			<div class="tag">✨ Bảng giá nổi bật</div>
 			<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">Lựa chọn gói dịch vụ tối ưu</h2>
 		</div>
 
-		<div class="grid gap-8 lg:grid-cols-3">
-			{featuredServices.map((pkg, index) => (
-				<article class={`reveal k-card relative flex flex-col justify-between h-full p-8 ${pkg.popular ? "border-2 border-[#02b3fd] shadow-[0_25px_55px_rgba(2,179,253,0.25)]" : ""}`} style={`transition-delay: ${index * 80}ms`}>
-					{pkg.popular && (
-						<span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#568fca] to-[#02b3fd] px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider shadow-md">
-							Khuyên dùng
-						</span>
-					)}
-					<div class="space-y-6">
-						<div>
-							<p class="text-xs font-extrabold tracking-widest text-[#02b3fd] uppercase">Gói 0{index + 1}</p>
-							<h3 class="mt-2 text-2xl font-black text-deep-navy leading-snug">{pkg.title}</h3>
-						</div>
-						<div class="py-2 border-y border-slate-100 flex items-baseline gap-1">
-							<span class="text-xl font-bold text-[#02b3fd]">{pkg.price}</span>
-						</div>
-						<ul class="space-y-4 text-sm text-slate-600">
-							{pkg.items.map((item) => (
-								<li class="flex items-start gap-3">
-									<span class="mt-1 flex size-2 shrink-0 rounded-full bg-[#02b3fd]"></span>
-									<span>{item}</span>
-								</li>
-							))}
-						</ul>
-					</div>
-					<!-- Đồng bộ nút Đăng ký (Primary & Outline đồng bộ đúng 52px chiều cao) -->
-					<div class="pt-8">
-						{pkg.popular ? (
-							<a href="#contact" class="btn-premium-primary w-full">
-								Đăng ký ngay
-							</a>
-						) : (
-							<a href="#contact" class="btn-premium-outline w-full">
-								Đăng ký ngay
-							</a>
-						)}
-					</div>
-				</article>
-			))}
+		<!-- Container Slider có nút bấm absolute ở 2 bên sườn -->
+		<div class="relative w-full">
+			<!-- Nút Left (Ở sườn trái, đè nhẹ lên mép slider) -->
+			<button class="pricing-prev-btn absolute -left-3 xs:-left-5 sm:-left-6 top-[50%] -translate-y-1/2 z-20 grid size-10 sm:size-12 place-items-center rounded-full border border-slate-200/80 bg-white/90 text-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm hover:bg-[#02b3fd] hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer lg:hidden" aria-label="Gói trước">
+				<svg viewBox="0 0 24 24" class="size-5 sm:size-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+			</button>
+
+			<!-- Nút Right (Ở sườn phải, đè nhẹ lên mép slider) -->
+			<button class="pricing-next-btn absolute -right-3 xs:-right-5 sm:-right-6 top-[50%] -translate-y-1/2 z-20 grid size-10 sm:size-12 place-items-center rounded-full border border-slate-200/80 bg-white/90 text-slate-700 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm hover:bg-[#02b3fd] hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer lg:hidden" aria-label="Gói tiếp theo">
+				<svg viewBox="0 0 24 24" class="size-5 sm:size-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+			</button>
+
+			<!-- Viewport Slider có overflow-hidden cắt bóng đổ tràn tránh overflow toàn trang -->
+			<div class="w-full overflow-hidden">
+				<div class="pricing-slider flex items-stretch overflow-x-auto lg:grid lg:grid-cols-3 gap-4 lg:gap-8 snap-x snap-mandatory scroll-smooth pt-8 pb-12 scrollbar-none px-6 xs:px-8 lg:px-0">
+					{featuredServices.map((pkg, index) => (
+						<article class={`reveal k-card relative flex flex-col justify-between h-auto p-4 sm:p-8 shrink-0 snap-start w-[calc(50%-8px)] min-w-[155px] xs:min-w-[210px] sm:min-w-[280px] lg:w-auto lg:shrink lg:snap-none ${pkg.popular ? "border-2 border-[#02b3fd] shadow-[0_25px_55px_rgba(2,179,253,0.25)]" : ""}`} style={`transition-delay: ${index * 80}ms`}>
+							{pkg.popular && (
+								<span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#568fca] to-[#02b3fd] px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider shadow-md whitespace-nowrap">
+									Khuyên dùng
+								</span>
+							)}
+							<div class="space-y-4 sm:space-y-6">
+								<div>
+									<p class="text-xs font-extrabold tracking-widest text-[#02b3fd] uppercase">Gói 0{index + 1}</p>
+									<h3 class="mt-2 text-base sm:text-2xl font-black text-deep-navy leading-snug">{pkg.title}</h3>
+								</div>
+								<div class="py-2 border-y border-slate-100 flex items-baseline gap-1">
+									<span class="text-sm sm:text-xl font-bold text-[#02b3fd]">{pkg.price}</span>
+								</div>
+								<ul class="space-y-2 sm:space-y-4 text-xs sm:text-sm text-slate-600">
+									{pkg.items.map((item) => (
+										<li class="flex items-start gap-2 sm:gap-3">
+											<span class="mt-1.5 flex size-1.5 sm:size-2 shrink-0 rounded-full bg-[#02b3fd]"></span>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+							<!-- Đồng bộ nút Đăng ký (Primary & Outline đồng bộ đúng 52px chiều cao) -->
+							<div class="pt-4 sm:pt-8">
+								{pkg.popular ? (
+									<a href="#contact" class="btn-premium-primary w-full">
+										Đăng ký ngay
+									</a>
+								) : (
+									<a href="#contact" class="btn-premium-outline w-full">
+										Đăng ký ngay
+									</a>
+								)}
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
+
+<script>
+	function initPricingSlider() {
+		const slider = document.querySelector(".pricing-slider");
+		const prevBtn = document.querySelector(".pricing-prev-btn");
+		const nextBtn = document.querySelector(".pricing-next-btn");
+
+		if (slider && prevBtn && nextBtn) {
+			prevBtn.addEventListener("click", () => {
+				const cardWidth = slider.firstElementChild ? (slider.firstElementChild as HTMLElement).offsetWidth + 16 : 300;
+				slider.scrollLeft -= cardWidth;
+			});
+
+			nextBtn.addEventListener("click", () => {
+				const cardWidth = slider.firstElementChild ? (slider.firstElementChild as HTMLElement).offsetWidth + 16 : 300;
+				slider.scrollLeft += cardWidth;
+			});
+		}
+	}
+
+	initPricingSlider();
+	document.addEventListener("astro:after-swap", initPricingSlider);
+</script>
