@@ -5,13 +5,13 @@
 	--font-sans: "Inter", sans-serif;
 	--font-display: "Inter", sans-serif;
 
-	--color-primary: #00bcd4;
-	--color-primary-container: #e0f7fa;
-	--color-secondary: #ff37b7;
+	--color-primary: #02b3fd;
+	--color-primary-container: #e0f2fe;
+	--color-secondary: #568fca;
 	--color-deep-navy: #0f172a;
 	--color-action-orange: #ff811b;
 	--color-vibrant-blue: #00b3ff;
-	--color-surface-glass: rgba(255, 255, 255, 0.75);
+	--color-surface-glass: rgba(255, 255, 255, 0.82);
 
 	--animate-float: float 8s ease-in-out infinite;
 	--animate-pulse-slow: pulse-slow 10s ease-in-out infinite;
@@ -40,7 +40,7 @@
 :root {
 	--ink: #0f172a;
 	--paper: #ffffff;
-	--primary: #00bcd4;
+	--primary: #02b3fd;
 	--primary-soft: #e0f2fe;
 	--primary-bright: #00b3ff;
 	--warm: #ff811b;
@@ -79,23 +79,23 @@ body {
 	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
 
-/* Patterns & Decorations */
+/* Patterns & Decorations (Phối màu cyan và blue) */
 .bg-grid-pattern {
 	background-size: 50px 50px;
 	background-image: 
-		linear-gradient(to right, rgba(0, 188, 212, 0.05) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(0, 188, 212, 0.05) 1px, transparent 1px);
+		linear-gradient(to right, rgba(2, 179, 253, 0.06) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(2, 179, 253, 0.06) 1px, transparent 1px);
 }
 
 .bg-dots-pattern {
 	background-size: 24px 24px;
-	background-image: radial-gradient(rgba(255, 55, 183, 0.08) 1.5px, transparent 1.5px);
+	background-image: radial-gradient(rgba(86, 143, 202, 0.1) 1.5px, transparent 1.5px);
 }
 
 .glow-blob {
 	position: absolute;
 	border-radius: 999px;
-	filter: blur(100px);
+	filter: blur(120px);
 	pointer-events: none;
 	z-index: 0;
 }
@@ -105,20 +105,21 @@ body {
 	margin-inline: auto;
 }
 
+/* Tag bóng bẩy */
 .tag {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	border: 1px solid rgba(255, 55, 183, 0.2);
+	border: 1.5px solid rgba(2, 179, 253, 0.25);
 	border-radius: 999px;
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 253, 250, 0.9) 100%);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(224, 242, 254, 0.95) 100%);
 	padding: 8px 18px;
 	font-size: 13px;
 	font-weight: 800;
 	letter-spacing: 0.08em;
-	color: #00bcd4;
+	color: #02b3fd;
 	text-transform: uppercase;
-	box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+	box-shadow: 0 4px 15px rgba(2, 179, 253, 0.12);
 	backdrop-filter: blur(10px);
 }
 
@@ -127,7 +128,7 @@ body {
 	width: 8px;
 	height: 8px;
 	border-radius: 999px;
-	background: linear-gradient(to right, #ff37b7, #00bcd4);
+	background: linear-gradient(to right, #568fca, #02b3fd);
 	animation: pulse 2s infinite;
 }
 
@@ -142,32 +143,135 @@ body {
 	}
 }
 
+/* Premium Glassmorphism & Shadow (Bóng đổ sâu hơn, viền bóng bẩy) */
 .glass-panel {
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.8);
 	backdrop-filter: blur(24px);
 	-webkit-backdrop-filter: blur(24px);
-	border: 1px solid rgba(255, 255, 255, 0.4);
+	border: 1.5px solid rgba(255, 255, 255, 0.65);
+	box-shadow: 0 25px 55px rgba(2, 179, 253, 0.12), 0 5px 15px rgba(15, 23, 42, 0.04);
 }
 
 .text-gradient {
-	background: linear-gradient(90deg, #ff37b7 0%, #00bcd4 50%, #00b3ff 100%);
+	background: linear-gradient(90deg, #568fca 0%, #02b3fd 50%, #00b3ff 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
+/* Thẻ Premium Card với bóng đổ sâu và độ bóng cao */
 .k-card {
-	border: 1px solid rgba(255, 255, 255, 0.5);
+	border: 1.5px solid rgba(255, 255, 255, 0.7);
 	border-radius: 24px;
-	background: rgba(255, 255, 255, 0.75);
-	box-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 25px 50px rgba(15, 23, 42, 0.07), 0 5px 15px rgba(2, 179, 253, 0.03);
 	backdrop-filter: blur(20px);
 	transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .k-card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 30px 60px rgba(0, 188, 212, 0.12);
-	border-color: rgba(0, 188, 212, 0.25);
+	transform: translateY(-8px);
+	box-shadow: 0 40px 80px rgba(2, 179, 253, 0.22), 0 10px 20px rgba(86, 143, 202, 0.06);
+	border-color: rgba(2, 179, 253, 0.4);
+}
+
+/* Đồng bộ kích thước Button Premium (Luôn cao đúng 52px bằng flex và border-box) */
+.btn-premium-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 52px !important;
+	min-height: 52px !important;
+	box-sizing: border-box !important;
+	padding: 0 32px !important;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: #ffffff !important;
+	border-radius: 9999px !important;
+	border: none !important;
+	background: linear-gradient(90deg, #568fca 0%, #02b3fd 50%, #00b3ff 100%);
+	background-size: 200% auto;
+	box-shadow: 0 10px 28px rgba(2, 179, 253, 0.38), 0 4px 12px rgba(86, 143, 202, 0.18);
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.btn-premium-primary::after {
+	content: "";
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.35) 30%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	transform: rotate(30deg);
+	transition: all 0.5s ease;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.btn-premium-primary:hover {
+	transform: translateY(-3px) scale(1.02);
+	background-position: right center;
+	box-shadow: 0 18px 38px rgba(2, 179, 253, 0.48), 0 6px 18px rgba(86, 143, 202, 0.28);
+}
+
+.btn-premium-primary:hover::after {
+	animation: shine 1.2s ease-in-out;
+}
+
+@keyframes shine {
+	0% {
+		left: -50%;
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.5;
+	}
+	90% {
+		opacity: 0.5;
+	}
+	100% {
+		left: 125%;
+		opacity: 0;
+	}
+}
+
+.btn-premium-outline {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 52px !important;
+	min-height: 52px !important;
+	box-sizing: border-box !important;
+	padding: 0 32px !important;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: #0f172a !important;
+	border-radius: 9999px !important;
+	border: 1.5px solid rgba(15, 23, 42, 0.15) !important;
+	background: rgba(255, 255, 255, 0.65) !important;
+	box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.btn-premium-outline:hover {
+	transform: translateY(-3px);
+	border-color: #02b3fd !important;
+	color: #02b3fd !important;
+	background: rgba(255, 255, 255, 0.9) !important;
+	box-shadow: 0 10px 28px rgba(2, 179, 253, 0.18);
 }
 
 .marquee {
