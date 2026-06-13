@@ -1,137 +1,148 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const iconAttrs = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"';
 const navItems = [
-	{ label: "Trang chủ", href: "#top", icon: `<svg ${iconAttrs}><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>` },
-	{ label: "Về chúng tôi", href: "#about", icon: `<svg ${iconAttrs}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>` },
-	{ label: "Thiết kế Website", href: "#website-design", icon: `<svg ${iconAttrs}><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/><path d="m8 9 2.2 2.2L8 13.4"/><path d="M14 13h3"/></svg>` },
-	{ label: "Quảng cáo Online", href: "#ads-service", icon: `<svg ${iconAttrs}><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>` },
-	{ label: "Tuyển dụng", href: "#contact", icon: `<svg ${iconAttrs}><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 12v3"/></svg>` },
-	{ label: "Liên hệ", href: "#contact", icon: `<svg ${iconAttrs}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"/></svg>` },
+	{ label: "Trang chủ", href: "#top", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>` },
+	{ label: "Về KIGI", href: "#about", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>` },
+	{ label: "Dịch vụ", href: "#services", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/><path d="m8 9 2.2 2.2L8 13.4"/><path d="M14 13h3"/></svg>` },
+	{ label: "Quy trình", href: "#workflow", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>` },
+	{ label: "Dự án", href: "#projects", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>` },
+	{ label: "Liên hệ", href: "#contact", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"/></svg>` },
 ];
 
 const services = [
 	{
 		id: "website-design",
 		code: "WEB",
-		title: "Thiết kế website",
-		text: "Website chuẩn thương hiệu, tối ưu giao diện, trải nghiệm người dùng và SEO.",
-		accent: "from-[#1280d9] to-[#00c2ff]",
+		title: "Thiết kế Website chuẩn SEO",
+		text: "Giao diện độc bản, tối ưu trải nghiệm UI/UX mượt mà và chuẩn hóa SEO hỗ trợ tăng trưởng doanh thu vượt trội.",
+		accent: "from-[#006876] to-[#00b3ff]",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-[#006876]"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`
 	},
 	{
 		id: "content-creation",
 		code: "SOCIAL",
 		title: "Sáng tạo nội dung",
-		text: "Lên ý tưởng, viết content, thiết kế hình ảnh, video ngắn và xây dựng kênh social media.",
+		text: "Xây dựng kịch bản, sản xuất hình ảnh bắt mắt, làm video ngắn TikTok/Reels đậm chất GenZ kéo tương tác khủng.",
 		accent: "from-[#ff37b7] to-[#ff7bd5]",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-[#ff37b7]"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`
 	},
 	{
 		id: "ads-service",
 		code: "ADS",
-		title: "Chạy quảng cáo",
-		text: "Triển khai Facebook Ads, Google Ads, TikTok Ads giúp tăng khách hàng tiềm năng.",
-		accent: "from-[#ffd21e] to-[#ff9f1c]",
+		title: "Chạy quảng cáo tối ưu",
+		text: "Triển khai chiến dịch Facebook Ads, Google Ads, TikTok Ads thông minh giúp tiếp cận đúng tệp khách hàng tiềm năng.",
+		accent: "from-[#ff811b] to-[#ffd21e]",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-[#ff811b]"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>`
 	},
 	{
 		id: "brand-service",
 		code: "BRAND",
 		title: "Xây dựng thương hiệu",
-		text: "Thiết kế nhận diện, định vị thương hiệu và concept truyền thông khác biệt.",
-		accent: "from-[#7c3cff] to-[#1280d9]",
+		text: "Tư vấn bộ nhận diện thương hiệu nhất quán, khác biệt, định vị giá trị lõi giúp doanh nghiệp nổi bật trên thị trường.",
+		accent: "from-[#215abd] to-[#00b3ff]",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-[#215abd]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
 	},
 ];
 
 const reasons = [
-	["Tăng trưởng thật", "Tập trung chuyển đổi và hiệu quả kinh doanh."],
-	["Đúng khách hàng", "Tiếp cận đúng tệp mục tiêu."],
-	["Bắt trend nhanh", "Nội dung trẻ trung, dễ viral."],
-	["Ý tưởng mới", "Concept sáng tạo theo từng ngành."],
+	{ title: "Tăng trưởng thật", text: "Tập trung tối ưu chuyển đổi mang lại doanh thu thực tế cho doanh nghiệp.", color: "bg-[#006876]" },
+	{ title: "Nắm bắt xu thế nhanh", text: "Sản xuất nội dung bắt trend nhanh nhạy, hiện đại, thu hút giới trẻ.", color: "bg-[#ff37b7]" },
+	{ title: "Target chính xác", text: "Tối ưu hóa ngân sách quảng cáo, tiếp cận chính xác tệp khách hàng mục tiêu.", color: "bg-[#ff811b]" },
+	{ title: "Đồng hành 24/7", text: "Hỗ trợ kỹ thuật, tối ưu hóa chiến dịch liên tục để đảm bảo hiệu suất tốt nhất.", color: "bg-[#215abd]" },
 ];
 
 const workflow = [
-	["01", "Tiếp nhận", "Lắng nghe nhu cầu và mục tiêu."],
-	["02", "Chiến lược", "Xây dựng kế hoạch phù hợp."],
-	["03", "Triển khai", "Sản xuất nội dung và quảng cáo."],
-	["04", "Tối ưu", "Theo dõi dữ liệu và cải thiện."],
+	{ step: "01", title: "Tiếp nhận & Khảo sát", text: "Lắng nghe nhu cầu, phân tích đối thủ cạnh tranh và khảo sát thị trường." },
+	{ step: "02", title: "Lên chiến lược", text: "Đề xuất kế hoạch triển khai chi tiết, bảng giá và thời gian hoàn thành dự kiến." },
+	{ step: "03", title: "Sản xuất & Triển khai", text: "Thiết kế giao diện, lập trình tính năng, viết content và thiết kế hình ảnh." },
+	{ step: "04", title: "Nghiệm thu & Tối ưu", text: "Kiểm thử toàn diện, tối ưu hóa tốc độ tải trang, SEO và bàn giao tài liệu hướng dẫn." },
 ];
 
 const featuredServices = [
 	{
-		title: "Quản lý Fanpage",
-		items: ["Lên kế hoạch nội dung", "Thiết kế hình ảnh chuyên nghiệp", "Tăng tương tác thương hiệu", "Đăng bài và chăm sóc fanpage"],
+		title: "Quản lý Fanpage Chuyên Nghiệp",
+		price: "Thỏa thuận",
+		popular: false,
+		items: ["Lên kế hoạch nội dung chi tiết theo tháng", "Thiết kế hình ảnh thương hiệu độc quyền", "Sản xuất video ngắn Reels/TikTok", "Đăng bài chuẩn SEO và tương tác khách hàng"],
 	},
 	{
-		title: "Marketing tổng thể",
+		title: "Marketing Tổng Thể Doanh Nghiệp",
+		price: "Khuyên dùng",
 		popular: true,
-		items: ["Facebook & Google Ads", "Xây dựng thương hiệu", "Quản lý nội dung đa nền tảng", "Báo cáo & tối ưu hàng tháng"],
+		items: ["Tối ưu Website và SEO Google", "Vận hành đa kênh Facebook, Zalo, TikTok", "Chạy quảng cáo Facebook Ads / Google Ads", "Báo cáo số liệu minh bạch hàng tuần/tháng"],
 	},
 	{
-		title: "Media & Video",
-		items: ["Quay dựng video TikTok", "Video quảng cáo thương hiệu", "Chụp ảnh sản phẩm", "Viral content ngắn"],
+		title: "Media & Video Production",
+		price: "Thỏa thuận",
+		popular: false,
+		items: ["Quay dựng video ngắn TikTok viral", "Sản xuất video giới thiệu sản phẩm/dịch vụ", "Chụp ảnh sản phẩm chuyên nghiệp", "Hỗ trợ viết kịch bản phân cảnh chi tiết"],
 	},
-];
-
-const commitments = [
-	["Triển khai nhanh", "Hỗ trợ setup và triển khai chiến dịch chỉ trong vài ngày."],
-	["Tối ưu hiệu quả", "Liên tục theo dõi và tối ưu quảng cáo để tăng chuyển đổi."],
-	["Đồng hành lâu dài", "Tư vấn chiến lược phát triển thương hiệu bền vững."],
 ];
 
 const projects = [
-	["Mỹ phẩm", "Chiến dịch Facebook", "https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop"],
-	["Thời trang", "Xây dựng TikTok", "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"],
-	["Ẩm thực", "Quảng cáo tăng doanh số", "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop"],
-	["Công nghệ", "Website & SEO", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"],
+	{ category: "Thời trang", title: "Xây dựng kênh TikTok thời trang", image: "/images/project-fashion.jpg" },
+	{ category: "Ẩm thực", title: "Quảng bá thương hiệu ẩm thực Nha Trang", image: "/images/project-food.jpg" },
+	{ category: "Mỹ phẩm", title: "Chiến dịch quảng cáo Facebook mỹ phẩm", image: "/images/project-cosmetics.jpg" },
+	{ category: "Công nghệ", title: "Thiết kế Website & SEO tổng thể", image: "/images/project-tech.jpg" },
 ];
 
 const clients = ["NHA TRANG FOOD", "VIET SMILE", "KATI BEAUTY", "SÀI GÒN MEDIA", "VIỆT PHÁT GROUP", "NICE TRAVEL"];
-const serviceList = ["Thiết kế Website chuẩn SEO", "Quản lý Fanpage", "Sáng tạo nội dung Social", "Chạy quảng cáo Facebook / Google", "Media & Video TikTok"];
+
 const contactItems = [
-	{ label: "Hotline", text: "0563.555.535", href: "tel:0563555535", icon: `<svg ${iconAttrs}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"/></svg>` },
-	{ label: "Email", text: "info@kigiagency.com", href: "mailto:info@kigiagency.com", icon: `<svg ${iconAttrs}><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>` },
-	{ label: "Website", text: "www.kigiagency.com", href: "https://kigiagency.com/", icon: `<svg ${iconAttrs}><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg>` },
-	{ label: "Địa chỉ", text: "Số 25 - 26 Nguyễn Đình Chiểu, Phường Bắc Nha Trang, Tỉnh Khánh Hòa", href: "", icon: `<svg ${iconAttrs}><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
+	{ label: "Hotline", text: "0563.555.535", href: "tel:0563555535", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-[#006876]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"/></svg>` },
+	{ label: "Email", text: "info@kigiagency.com", href: "mailto:info@kigiagency.com", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-[#006876]"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>` },
+	{ label: "Website", text: "www.kigiagency.com", href: "https://kigiagency.com/", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-[#006876]"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg>` },
+	{ label: "Địa chỉ", text: "Số 25 - 26 Nguyễn Đình Chiểu, Phường Vĩnh Phước, TP. Nha Trang, Khánh Hòa", href: "", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-[#006876]"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
 ];
 ---
 
 <Layout>
-	<main id="top">
-		<header class="fixed left-0 right-0 top-0 z-50 px-4 py-4">
-			<div class="mx-auto max-w-7xl rounded-[10px] border border-[#1280d9]/10 bg-white/92 px-4 py-3 text-[#0b172a] shadow-xl shadow-[#1280d9]/10 backdrop-blur-xl lg:px-6">
+	<main id="top" class="relative">
+		<!-- Header/Navigation Bar -->
+		<header class="fixed left-0 right-0 top-0 z-50 px-4 py-4 lg:px-8">
+			<div class="mx-auto max-w-7xl rounded-2xl border border-white/20 bg-white/70 px-4 py-3 shadow-lg backdrop-blur-xl lg:px-6">
 				<div class="flex items-center justify-between gap-4">
-				<a href="#top" class="button-focus flex items-center gap-3 rounded-[10px]">
-					<span class="grid size-11 place-items-center rounded-[10px] bg-[#1280d9] font-black text-white shadow-lg shadow-[#1280d9]/25">K</span>
-					<span class="leading-none">
-						<span class="block text-xl font-black tracking-[0.12em]">KIGI</span>
-						<span class="mt-1 block text-[11px] font-bold uppercase tracking-[0.26em] text-[#1280d9]">Agency</span>
-					</span>
-				</a>
-				<nav class="hidden items-center gap-1 text-[12px] font-black uppercase tracking-[0.04em] 2xl:flex">
-					{navItems.map((item) => (
-						<a class="button-focus flex items-center gap-2 rounded-[10px] px-2.5 py-3 text-[#0b172a]/72 transition hover:bg-[#e8f4ff] hover:text-[#1280d9]" href={item.href}>
-							<span class="menu-icon" set:html={item.icon}></span>
-							<span class="whitespace-nowrap">{item.label}</span>
-						</a>
-					))}
-				</nav>
-				<div class="flex items-center gap-2">
-				<a href="#contact" class="button-focus inline-flex rounded-[10px] bg-[#1280d9] px-4 py-3 text-xs font-black text-white shadow-lg shadow-[#1280d9]/25 transition hover:-translate-y-0.5 hover:bg-[#0f6fc0] sm:px-5 sm:text-sm">
-					<span class="hidden sm:inline">Nhận tư vấn</span><span class="sm:hidden">Tư vấn</span>
-				</a>
-				<button class="button-focus menu-toggle grid size-11 place-items-center rounded-[10px] border border-[#1280d9]/15 bg-[#e8f4ff] text-[#1280d9] 2xl:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
-					<svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-						<path d="M4 7h16"></path>
-						<path d="M4 12h16"></path>
-						<path d="M4 17h16"></path>
-					</svg>
-				</button>
-				</div>
-				</div>
-				<nav id="mobile-menu" class="mobile-menu hidden border-t border-[#1280d9]/10 pt-3 2xl:hidden">
-					<div class="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+					<!-- Logo -->
+					<a href="#top" class="button-focus flex items-center gap-3 rounded-xl hover:opacity-90 transition-opacity">
+						<img src="/logo.jpg" alt="KIGI Agency Logo" class="h-10 w-auto rounded-lg object-contain shadow-sm border border-white/30" />
+						<span class="leading-none hidden sm:inline-block">
+							<span class="block text-lg font-black tracking-wider text-deep-navy">KIGI</span>
+							<span class="mt-0.5 block text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#00b3ff]">Agency</span>
+						</span>
+					</a>
+
+					<!-- Menu Desktop -->
+					<nav class="hidden items-center gap-1 text-[13px] font-bold uppercase tracking-wider 2xl:flex">
 						{navItems.map((item) => (
-							<a class="button-focus flex items-center gap-3 rounded-[10px] bg-[#f3f9ff] px-4 py-3 text-sm font-black uppercase tracking-[0.04em] text-[#0b172a] transition hover:bg-[#1280d9] hover:text-white" href={item.href}>
+							<a class="button-focus flex items-center gap-2 rounded-xl px-4 py-2 text-deep-navy/80 transition-all hover:bg-[#006876]/10 hover:text-[#006876]" href={item.href}>
+								<span class="menu-icon" set:html={item.icon}></span>
+								<span class="whitespace-nowrap">{item.label}</span>
+							</a>
+						))}
+					</nav>
+
+					<!-- Action Buttons -->
+					<div class="flex items-center gap-2">
+						<a href="#contact" class="btn btn-primary rounded-full btn-sm sm:btn-md shadow-md hover:scale-105 transition-all text-white border-0 bg-gradient-to-r from-[#006876] to-[#00b3ff]">
+							Liên hệ ngay
+						</a>
+						<!-- Menu Toggle Mobile -->
+						<button class="button-focus menu-toggle grid size-10 place-items-center rounded-xl border border-white/30 bg-[#e8f4ff] text-[#006876] 2xl:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
+							<svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+								<path d="M4 7h16"></path>
+								<path d="M4 12h16"></path>
+								<path d="M4 17h16"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<!-- Mobile Menu -->
+				<nav id="mobile-menu" class="mobile-menu hidden border-t border-white/20 pt-3 mt-3 2xl:hidden">
+					<div class="grid gap-2 sm:grid-cols-2">
+						{navItems.map((item) => (
+							<a class="button-focus flex items-center gap-3 rounded-xl bg-white/50 px-4 py-3 text-sm font-bold uppercase tracking-wider text-deep-navy transition hover:bg-[#006876] hover:text-white" href={item.href}>
 								<span class="menu-icon" set:html={item.icon}></span>
 								<span>{item.label}</span>
 							</a>
@@ -141,188 +152,202 @@ const contactItems = [
 			</div>
 		</header>
 
-		<section class="relative overflow-hidden bg-[linear-gradient(135deg,#f7fbff_0%,#eef7ff_42%,#fff8fe_100%)] pb-16 pt-32 lg:pb-24 lg:pt-36">
-			<div class="absolute inset-0 opacity-80" style="background-image: radial-gradient(circle at 16% 18%, rgba(18,128,217,.16), transparent 28%), radial-gradient(circle at 86% 20%, rgba(255,55,183,.13), transparent 30%), linear-gradient(115deg, transparent 0 38%, rgba(255,210,30,.18) 38% 46%, transparent 46%);"></div>
-			<div class="section-shell relative grid items-center gap-10 lg:grid-cols-[1.02fr_.98fr]">
-				<div class="reveal">
-					<p class="tag text-[#1280d9]">KIGI Agency</p>
-					<h1 class="mt-6 max-w-3xl text-balance text-[clamp(2.55rem,5.4vw,5.6rem)] font-black leading-[1.02] tracking-normal text-[#0b172a]">
-						Sáng tạo để tăng trưởng bền vững
+		<!-- Hero Section -->
+		<section class="relative overflow-hidden bg-gradient-to-br from-[#faf8ff] via-[#eaedff] to-[#dae2fd] pb-24 pt-32 lg:pb-36 lg:pt-44">
+			<!-- Background Blurs -->
+			<div class="absolute inset-0 opacity-80" style="background-image: radial-gradient(circle at 10% 20%, rgba(0, 104, 118, 0.08), transparent 30%), radial-gradient(circle at 90% 80%, rgba(33, 90, 189, 0.08), transparent 30%);"></div>
+			
+			<div class="section-shell relative grid items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
+				<!-- Text Block -->
+				<div class="reveal space-y-6">
+					<div class="tag text-[#006876]">KIGI Agency</div>
+					<h1 class="text-4xl font-extrabold tracking-tight text-deep-navy sm:text-5xl lg:text-6xl leading-[1.15]">
+						Sáng tạo để <br />
+						<span class="text-gradient">Tăng trưởng</span> <br />
+						bền vững
 					</h1>
-					<p class="mt-6 max-w-2xl text-base leading-8 text-[#385069] md:text-lg">
-						KIGI Agency giúp doanh nghiệp xây dựng thương hiệu mạnh mẽ trên Facebook, TikTok, Google và Website bằng tư duy sáng tạo, chiến lược thực chiến và nội dung đậm chất GenZ.
+					<p class="max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
+						KIGI Agency đồng hành cùng doanh nghiệp kiến tạo thương hiệu vững mạnh trên các nền tảng kỹ thuật số (Facebook, TikTok, Google & Website) bằng tư duy đột phá, thực chiến và sáng tạo.
 					</p>
-					<div class="mt-8 flex flex-wrap gap-3">
-						<a class="button-focus rounded-[10px] bg-[#1280d9] px-6 py-4 text-sm font-black text-white shadow-xl shadow-[#1280d9]/20 transition hover:-translate-y-1 hover:bg-[#0f6fc0]" href="#services">Khám phá dịch vụ</a>
-						<a class="button-focus rounded-[10px] border border-[#1280d9]/20 bg-white px-6 py-4 text-sm font-black text-[#1280d9] transition hover:-translate-y-1 hover:border-[#1280d9]" href="#projects">Xem dự án</a>
+					<div class="flex flex-wrap gap-4 pt-2">
+						<a class="btn btn-primary rounded-full px-8 text-white bg-gradient-to-r from-[#006876] to-[#00b3ff] border-0 hover:shadow-lg hover:scale-105 transition-all" href="#services">
+							Khám phá dịch vụ
+						</a>
+						<a class="btn btn-outline rounded-full px-8 border-slate-300 hover:bg-slate-100 hover:text-deep-navy transition-all" href="#projects">
+							Xem dự án thực tế
+						</a>
 					</div>
-					<div class="mt-10 grid max-w-xl grid-cols-3 gap-3">
+					
+					<!-- Stats Badges -->
+					<div class="grid grid-cols-3 gap-4 pt-6 max-w-md">
 						{[
-							["50+", "Doanh nghiệp"],
-							["4+", "Nhóm dịch vụ"],
+							["50+", "Khách hàng"],
+							["98%", "Hài lòng"],
 							["24/7", "Đồng hành"],
-						].map(([number, label]) => (
-							<div class="rounded-[10px] border border-[#1280d9]/10 bg-white/75 p-4 shadow-lg shadow-[#1280d9]/5">
-								<p class="text-2xl font-black text-[#1280d9]">{number}</p>
-								<p class="mt-1 text-xs font-bold uppercase tracking-[0.06em] text-[#385069]">{label}</p>
+						].map(([value, desc]) => (
+							<div class="rounded-xl border border-white/40 bg-white/40 p-4 shadow-sm backdrop-blur-sm text-center">
+								<p class="text-2xl font-black text-[#006876]">{value}</p>
+								<p class="mt-1 text-[11px] font-bold uppercase tracking-wider text-slate-500">{desc}</p>
 							</div>
 						))}
 					</div>
 				</div>
 
-				<div class="reveal relative" style="transition-delay: 120ms">
-					<div class="relative mx-auto max-w-[560px] rounded-[10px] border border-[#1280d9]/10 bg-white p-3 shadow-2xl shadow-[#1280d9]/18">
-						<img class="aspect-[4/3] w-full rounded-[10px] object-cover" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop" alt="Đội ngũ trẻ KIGI Agency" />
-						<div class="absolute -bottom-6 left-6 right-6 rounded-[10px] border border-[#1280d9]/10 bg-white p-5 shadow-xl shadow-[#1280d9]/12">
-							<p class="text-xs font-black uppercase tracking-[0.12em] text-[#1280d9]">Giải pháp Marketing toàn diện</p>
-							<p class="mt-2 text-2xl font-black leading-tight text-[#0b172a]">Sáng tạo khác biệt, đo lường rõ ràng</p>
+				<!-- Hero Visual Block -->
+				<div class="reveal relative" style="transition-delay: 150ms">
+					<!-- Ambient Glow -->
+					<div class="absolute -inset-4 bg-gradient-to-r from-[#00bcd4] to-[#00b3ff] rounded-[2.5rem] blur-3xl opacity-15 animate-pulse-slow"></div>
+					<!-- Glass Container for Image (Bỏ overflow-hidden để các badge trôi nổi không bị cắt) -->
+					<div class="glass-panel rounded-3xl p-4 relative shadow-2xl border border-white/40 transition-transform duration-500 hover:-translate-y-2">
+						<!-- Khung ảnh có overflow-hidden để bo góc ảnh tròn đẹp -->
+						<div class="overflow-hidden rounded-2xl aspect-[4/3] w-full">
+							<img class="w-full h-full object-cover" src="/images/hero.jpg" alt="Đội ngũ sáng tạo KIGI Agency" />
+						</div>
+						
+						<!-- Floating Card 1 -->
+						<div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-4 shadow-xl flex items-center gap-4 animate-bounce z-20" style="animation-duration: 4s">
+							<div class="bg-[#e0f2fe] p-3 rounded-xl text-[#006876] flex items-center justify-center">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-6"><path d="M23 6 13.5 15.5 8.5 10.5 1 18"/><path d="M17 6h6v6"/></svg>
+							</div>
+							<div>
+								<p class="font-black text-deep-navy text-sm">Tăng trưởng SEO</p>
+								<p class="text-xs font-semibold text-[#006876]">+250% Traffic</p>
+							</div>
+						</div>
+
+						<!-- Floating Card 2 -->
+						<div class="absolute -top-6 -right-6 bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-4 shadow-xl flex items-center gap-4 animate-bounce z-20 hidden md:flex" style="animation-duration: 5s">
+							<div class="bg-[#fef3c7] p-3 rounded-xl text-[#ff811b] flex items-center justify-center">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+							</div>
+							<div>
+								<p class="font-black text-deep-navy text-sm font-sans">Doanh số Quảng cáo</p>
+								<p class="text-xs font-semibold text-[#ff811b] font-sans">+180% Đơn hàng</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="about" class="py-16 lg:py-24">
-			<div class="section-shell grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
-				<div class="reveal">
-					<img class="aspect-[4/3] w-full rounded-[10px] object-cover shadow-2xl shadow-[#1280d9]/10" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop" alt="KIGI teamwork" />
+		<!-- About Us Section -->
+		<section id="about" class="py-20 lg:py-32 bg-white">
+			<div class="section-shell grid items-center gap-16 lg:grid-cols-[.9fr_1.1fr]">
+				<!-- Image Block -->
+				<div class="reveal relative">
+					<div class="absolute -inset-4 bg-gradient-to-tr from-[#215abd]/10 to-[#00b3ff]/10 rounded-2xl blur-2xl"></div>
+					<div class="overflow-hidden rounded-2xl aspect-[4/3] w-full shadow-xl border border-slate-100 relative z-10 transition-transform duration-500 hover:scale-[1.02]">
+						<img class="w-full h-full object-cover" src="/images/team.png" alt="Họp nhóm KIGI Agency" />
+					</div>
 				</div>
-				<div class="reveal">
-					<p class="tag text-[#1280d9]">Giới thiệu KIGI</p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Agency trẻ trung, sáng tạo và thực chiến</h2>
-					<p class="mt-6 text-base leading-8 text-[#385069] md:text-lg">
-						KIGI Agency đồng hành cùng doanh nghiệp xây dựng thương hiệu, phát triển nội dung, thiết kế website và triển khai quảng cáo đa nền tảng. Chúng tôi tập trung vào hiệu quả thật: tăng nhận diện, tăng khách hàng tiềm năng và tăng doanh thu.
+				<!-- Content Block -->
+				<div class="reveal space-y-6">
+					<div class="tag text-[#006876]">Giới thiệu KIGI</div>
+					<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl leading-tight">
+						Đội ngũ trẻ trung, tư duy hiện đại và hành động thực chiến
+					</h2>
+					<p class="text-slate-600 leading-relaxed text-base md:text-lg">
+						Chúng tôi không chỉ cung cấp dịch vụ, KIGI Agency là đối tác đồng hành phát triển thương hiệu cùng doanh nghiệp. Với sự nhiệt huyết của đội ngũ sáng tạo trẻ, chúng tôi cam kết đem lại các chiến dịch truyền thông hiệu quả, tối ưu hóa ngân sách và bám sát doanh số bán hàng.
 					</p>
+					
+					<div class="grid gap-4 sm:grid-cols-2 pt-2">
+						<div class="flex gap-3 items-start">
+							<span class="p-2 rounded-lg bg-[#e0f2fe] text-[#006876] shrink-0 flex items-center justify-center">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>
+							</span>
+							<div>
+								<h4 class="font-bold text-deep-navy">Ý tưởng bứt phá</h4>
+								<p class="text-sm text-slate-500 mt-1">Nội dung sáng tạo khác biệt, dẫn đầu xu hướng.</p>
+							</div>
+						</div>
+						<div class="flex gap-3 items-start">
+							<span class="p-2 rounded-lg bg-[#e0f2fe] text-[#006876] shrink-0 flex items-center justify-center">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>
+							</span>
+							<div>
+								<h4 class="font-bold text-deep-navy">Đo lường rõ ràng</h4>
+								<p class="text-sm text-slate-500 mt-1">Hệ thống báo cáo chỉ số rõ ràng, minh bạch.</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="overflow-hidden border-y border-[#1280d9]/10 bg-white py-4">
-			<div class="marquee gap-10 whitespace-nowrap text-sm font-black uppercase tracking-[0.12em] text-[#1280d9]">
-				{Array.from({ length: 2 }).map(() => (
-					<div class="flex gap-10">
-						<span>Agency sáng tạo</span><span>Marketing Facebook</span><span>TikTok Viral</span><span>Quảng cáo Google</span><span>Xây dựng thương hiệu</span><span>Thiết kế website</span><span>SEO</span><span>Sản xuất media</span><span>KIGI Agency</span>
+		<!-- Marquee Slogan Bar -->
+		<section class="overflow-hidden border-y border-[#006876]/10 bg-gradient-to-r from-[#faf8ff] to-[#f2f3ff] py-6">
+			<div class="marquee gap-12 whitespace-nowrap text-sm font-black uppercase tracking-widest text-[#006876]/80">
+				{Array.from({ length: 3 }).map(() => (
+					<div class="flex gap-12 items-center">
+						<span>Agency Sáng Tạo</span>
+						<span class="size-2 rounded-full bg-[#ff811b]"></span>
+						<span>Marketing Facebook</span>
+						<span class="size-2 rounded-full bg-[#ff37b7]"></span>
+						<span>TikTok Viral</span>
+						<span class="size-2 rounded-full bg-[#215abd]"></span>
+						<span>Quảng Cáo Google</span>
+						<span class="size-2 rounded-full bg-[#006876]"></span>
+						<span>Thiết kế Website chuẩn SEO</span>
+						<span class="size-2 rounded-full bg-[#ff811b]"></span>
+						<span>Xây dựng Thương Hiệu</span>
+						<span class="size-2 rounded-full bg-[#ff37b7]"></span>
 					</div>
 				))}
 			</div>
 		</section>
 
-		<section id="services" class="py-16 lg:py-24">
+		<!-- Services Section -->
+		<section id="services" class="py-20 lg:py-32 bg-gradient-to-b from-[#faf8ff] to-[#f2f3ff]">
 			<div class="section-shell">
-				<div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
-					<div>
-						<p class="tag text-[#1280d9]">Dịch vụ của chúng tôi</p>
-						<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Giải pháp Marketing toàn diện</h2>
+				<!-- Section Header -->
+				<div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end mb-16">
+					<div class="space-y-4">
+						<div class="tag text-[#006876]">Dịch vụ toàn diện</div>
+						<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">Giải pháp Marketing đa nền tảng</h2>
 					</div>
-					<a href="#contact" class="button-focus w-fit rounded-[10px] border border-[#1280d9]/25 bg-white px-5 py-3 text-sm font-black text-[#1280d9] transition hover:bg-[#1280d9] hover:text-white">Nhận tư vấn dịch vụ</a>
+					<a href="#contact" class="btn btn-outline border-[#006876] text-[#006876] hover:bg-[#006876] hover:text-white rounded-full px-6 transition-all">
+						Tư vấn gói giải pháp
+					</a>
 				</div>
-				<div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+				<!-- Grid Cards -->
+				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 					{services.map((service, index) => (
-						<article id={service.id} class="reveal k-card group overflow-hidden p-0 transition hover:-translate-y-1 hover:border-[#1280d9]/35 hover:shadow-2xl hover:shadow-[#1280d9]/12" style={`transition-delay: ${index * 70}ms`}>
-							<div class={`h-2 bg-gradient-to-r ${service.accent}`}></div>
-							<div class="p-6">
-							<div class={`inline-flex rounded-[10px] bg-gradient-to-r px-3 py-2 text-xs font-black text-white ${service.accent}`}>{service.code}</div>
-							<h3 class="mt-6 text-xl font-black text-[#0b172a]">{service.title}</h3>
-							<p class="mt-4 leading-7 text-[#385069]">{service.text}</p>
+						<article id={service.id} class="reveal k-card overflow-hidden transition duration-300 flex flex-col justify-between h-full" style={`transition-delay: ${index * 80}ms`}>
+							<div class="p-8 space-y-6">
+								<div class="inline-flex rounded-xl bg-white p-3.5 shadow-sm border border-slate-100" set:html={service.icon}></div>
+								<div>
+									<h3 class="text-xl font-bold text-deep-navy leading-snug">{service.title}</h3>
+									<p class="mt-3 text-slate-500 text-sm leading-relaxed">{service.text}</p>
+								</div>
 							</div>
+							<div class={`h-1.5 w-full bg-gradient-to-r ${service.accent}`}></div>
 						</article>
 					))}
 				</div>
 			</div>
 		</section>
 
-		<section class="relative overflow-hidden bg-[#0b172a] py-16 text-white lg:py-24">
-			<div class="absolute inset-0 opacity-70" style="background-image: radial-gradient(circle at 12% 20%, rgba(18,128,217,.34), transparent 28%), radial-gradient(circle at 88% 12%, rgba(255,55,183,.22), transparent 30%), linear-gradient(120deg, transparent 0 55%, rgba(255,210,30,.12) 55% 62%, transparent 62%);"></div>
+		<!-- Commitments/Why Us Section -->
+		<section class="relative overflow-hidden bg-deep-navy py-20 text-white lg:py-32">
+			<!-- Background Blurs and Accents -->
+			<div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 15% 20%, rgba(0, 188, 212, 0.2), transparent 30%), radial-gradient(circle at 85% 80%, rgba(255, 55, 183, 0.15), transparent 30%);"></div>
+			
 			<div class="section-shell relative">
-				<div class="reveal text-center">
-					<p class="tag border-white/15 bg-white/92 text-[#1280d9] before:bg-[#1280d9]">Vì sao chọn KIGI?</p>
-					<h2 class="mx-auto mt-5 max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">Khác biệt từ tư duy thực chiến</h2>
+				<div class="reveal text-center max-w-2xl mx-auto space-y-4 mb-16">
+					<div class="tag border-white/10 bg-white/10 text-white before:bg-[#00b3ff]">Vì sao chọn KIGI?</div>
+					<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Khác biệt vượt trội từ tư duy giải pháp</h2>
 				</div>
-				<div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-					{reasons.map(([title, text], index) => (
-						<article class="reveal rounded-[10px] border border-white/14 bg-white/[0.09] p-6 shadow-xl shadow-black/10" style={`transition-delay: ${index * 70}ms`}>
-							<p class={`w-fit rounded-[10px] px-3 py-2 text-sm font-black ${index === 1 ? "bg-[#ff37b7]" : index === 2 ? "bg-[#ffd21e] text-[#0b172a]" : "bg-[#1280d9]"}`}>0{index + 1}</p>
-							<h3 class="mt-6 text-xl font-black">{title}</h3>
-							<p class="mt-3 leading-7 text-white/68">{text}</p>
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
 
-		<section class="py-16 lg:py-24">
-			<div class="section-shell">
-				<div class="reveal max-w-3xl">
-					<p class="tag text-[#1280d9]">Quy trình làm việc</p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">4 bước triển khai hiệu quả</h2>
-				</div>
-				<div class="mt-10 grid gap-4 lg:grid-cols-4">
-					{workflow.map(([number, title, text], index) => (
-						<article class="reveal k-card relative overflow-hidden p-6" style={`transition-delay: ${index * 70}ms`}>
-							<span class="absolute -right-2 -top-4 text-7xl font-black text-[#1280d9]/8">{number}</span>
-							<p class="text-sm font-black uppercase tracking-[0.14em] text-[#1280d9]">{number}</p>
-							<h3 class="mt-10 text-xl font-black text-[#0b172a]">{title}</h3>
-							<p class="mt-3 leading-7 text-[#385069]">{text}</p>
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<section class="bg-white py-16 lg:py-24">
-			<div class="section-shell">
-				<div class="reveal text-center">
-					<p class="tag text-[#1280d9]">Dịch vụ nổi bật</p>
-					<h2 class="mx-auto mt-5 max-w-4xl text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Giải pháp giúp doanh nghiệp tăng trưởng mạnh</h2>
-				</div>
-				<div class="mt-10 grid gap-6 lg:grid-cols-3">
-					{featuredServices.map((item, index) => (
-						<article class={`reveal k-card relative p-7 ${item.popular ? "border-2 border-[#1280d9]" : ""}`} style={`transition-delay: ${index * 80}ms`}>
-							{item.popular && <span class="absolute right-4 top-4 rounded-[10px] bg-[#1280d9] px-3 py-1 text-xs font-black text-white">PHỔ BIẾN</span>}
-							<p class="text-sm font-black uppercase tracking-[0.12em] text-[#1280d9]">Gói {index + 1}</p>
-							<h3 class="mt-5 text-2xl font-black text-[#0b172a]">{item.title}</h3>
-							<ul class="mt-6 space-y-4 text-[#385069]">
-								{item.items.map((point) => (
-									<li class="flex gap-3"><span class="mt-1 size-2 shrink-0 rounded-full bg-[#1280d9]"></span><span>{point}</span></li>
-								))}
-							</ul>
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<section class="relative overflow-hidden bg-[linear-gradient(135deg,#1280d9_0%,#0d8ff2_56%,#00c2ff_100%)] py-16 text-white lg:py-24">
-			<div class="absolute inset-0 opacity-75" style="background-image: radial-gradient(circle at 18% 22%, rgba(255,255,255,.24), transparent 26%), radial-gradient(circle at 88% 72%, rgba(255,55,183,.22), transparent 28%), linear-gradient(115deg, transparent 0 58%, rgba(255,210,30,.22) 58% 64%, transparent 64%);"></div>
-			<div class="section-shell relative text-center">
-				<div class="reveal mx-auto max-w-4xl">
-					<p class="tag border-white/20 bg-white/90 text-white before:bg-[#1280d9]"><span class="text-[#1280d9]">Cam kết dịch vụ</span></p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight md:text-5xl">KIGI Agency đồng hành cùng doanh nghiệp từ ý tưởng đến tăng trưởng</h2>
-				</div>
-				<div class="mt-10 grid gap-5 md:grid-cols-3">
-					{commitments.map(([title, text], index) => (
-						<article class="reveal rounded-[10px] border border-white/22 bg-white/15 p-7 shadow-2xl shadow-[#0b172a]/10 backdrop-blur" style={`transition-delay: ${index * 80}ms`}>
-							<h3 class="text-xl font-black">{title}</h3>
-							<p class="mt-4 leading-7 text-white/78">{text}</p>
-						</article>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<section id="projects" class="py-16 lg:py-24">
-			<div class="section-shell">
-				<div class="reveal">
-					<p class="tag text-[#1280d9]">Dự án nổi bật</p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Chúng tôi đã làm gì?</h2>
-				</div>
-				<div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-					{projects.map(([category, title, image], index) => (
-						<article class="reveal group overflow-hidden rounded-[10px] bg-white shadow-xl shadow-[#1280d9]/8" style={`transition-delay: ${index * 70}ms`}>
-							<img class="h-56 w-full object-cover transition duration-500 group-hover:scale-105" src={image} alt={title} />
-							<div class="border border-t-0 border-[#1280d9]/10 p-5">
-								<p class="text-xs font-black uppercase tracking-[0.12em] text-[#1280d9]">{category}</p>
-								<h3 class="mt-3 text-lg font-black text-[#0b172a]">{title}</h3>
+				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+					{reasons.map((reason, index) => (
+						<article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 shadow-lg backdrop-blur-sm space-y-6 transition hover:bg-white/10 duration-300" style={`transition-delay: ${index * 80}ms`}>
+							<span class={`flex size-10 items-center justify-center rounded-xl text-white font-bold text-sm ${reason.color}`}>
+								0{index + 1}
+							</span>
+							<div>
+								<h3 class="text-xl font-bold text-white">{reason.title}</h3>
+								<p class="mt-3 text-sm text-slate-300 leading-relaxed">{reason.text}</p>
 							</div>
 						</article>
 					))}
@@ -330,146 +355,283 @@ const contactItems = [
 			</div>
 		</section>
 
-		<section id="clients" class="bg-white py-16">
-			<div class="section-shell grid items-center gap-10 lg:grid-cols-[.8fr_1.2fr]">
-				<div class="reveal">
-					<p class="tag text-[#1280d9]">Khách hàng</p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Hơn 50+ doanh nghiệp tin tưởng KIGI Agency</h2>
+		<!-- Workflow Section -->
+		<section id="workflow" class="py-20 lg:py-32 bg-white">
+			<div class="section-shell">
+				<!-- Section Header -->
+				<div class="reveal text-center max-w-2xl mx-auto space-y-4 mb-16">
+					<div class="tag text-[#006876]">Quy trình chuẩn hóa</div>
+					<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">4 bước hợp tác hiệu quả</h2>
 				</div>
-				<div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-					{clients.map((client, index) => (
-						<div class="reveal k-card grid min-h-20 place-items-center p-4 text-center text-sm font-black text-[#0b172a]" style={`transition-delay: ${index * 50}ms`}>{client}</div>
+
+				<!-- Process Steps -->
+				<div class="grid gap-8 lg:grid-cols-4 relative">
+					{workflow.map((item, index) => (
+						<article class="reveal relative p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-md" style={`transition-delay: ${index * 80}ms`}>
+							<span class="absolute -right-2 -top-6 text-7xl font-extrabold text-slate-200/50 select-none z-0">{item.step}</span>
+							<div class="relative z-10 space-y-4">
+								<span class="inline-block px-3 py-1 bg-[#e0f2fe] text-[#006876] text-xs font-bold rounded-lg uppercase tracking-wider">{item.step}</span>
+								<h3 class="text-lg font-bold text-deep-navy pt-2">{item.title}</h3>
+								<p class="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+							</div>
+						</article>
 					))}
 				</div>
 			</div>
 		</section>
 
-		<section id="contact" class="py-16 lg:py-24">
-			<div class="section-shell grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
-				<div class="reveal">
-					<p class="tag text-[#1280d9]">Liên hệ với KIGI</p>
-					<h2 class="mt-5 text-balance text-3xl font-black leading-tight text-[#0b172a] md:text-5xl">Nhận tư vấn miễn phí</h2>
-					<p class="mt-6 text-base leading-8 text-[#385069] md:text-lg">Để lại thông tin để đội ngũ KIGI hỗ trợ chiến lược Marketing phù hợp cho doanh nghiệp của bạn.</p>
-					<div class="mt-8 grid gap-4 text-base text-[#0b172a] md:text-lg">
+		<!-- Featured Pricing Packages Section -->
+		<section class="py-20 lg:py-32 bg-gradient-to-b from-[#f2f3ff] to-[#faf8ff]">
+			<div class="section-shell">
+				<div class="reveal text-center max-w-2xl mx-auto space-y-4 mb-16">
+					<div class="tag text-[#006876]">Bảng giá nổi bật</div>
+					<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">Lựa chọn gói dịch vụ tối ưu</h2>
+				</div>
+
+				<div class="grid gap-8 lg:grid-cols-3">
+					{featuredServices.map((pkg, index) => (
+						<article class={`reveal k-card relative flex flex-col justify-between p-8 border ${pkg.popular ? "border-2 border-[#006876] shadow-xl relative scale-105" : "border-slate-200"}`} style={`transition-delay: ${index * 80}ms`}>
+							{pkg.popular && (
+								<span class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#ff811b] to-[#ffd21e] px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider shadow-md">
+									Khuyên dùng
+								</span>
+							)}
+							<div class="space-y-6">
+								<div>
+									<p class="text-xs font-extrabold tracking-widest text-[#006876] uppercase">Gói 0{index + 1}</p>
+									<h3 class="mt-2 text-2xl font-black text-deep-navy leading-snug">{pkg.title}</h3>
+								</div>
+								<div class="py-2 border-y border-slate-100 flex items-baseline gap-1">
+									<span class="text-xl font-bold text-[#006876]">{pkg.price}</span>
+								</div>
+								<ul class="space-y-4 text-sm text-slate-600">
+									{pkg.items.map((item) => (
+										<li class="flex items-start gap-3">
+											<span class="mt-1 flex size-2 shrink-0 rounded-full bg-[#00bcd4]"></span>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div class="pt-8">
+								<a href="#contact" class={`btn w-full rounded-full ${pkg.popular ? "btn-primary text-white bg-[#006876] border-0" : "btn-outline border-slate-300 text-deep-navy hover:bg-slate-100"}`}>
+									Đăng ký ngay
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Highlighted Projects Section -->
+		<section id="projects" class="py-20 lg:py-32 bg-white">
+			<div class="section-shell">
+				<!-- Section Header -->
+				<div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end mb-16">
+					<div class="space-y-4">
+						<div class="tag text-[#006876]">Sản phẩm thực tế</div>
+						<h2 class="text-3xl font-extrabold tracking-tight text-deep-navy sm:text-4xl">Dự án đã triển khai nổi bật</h2>
+					</div>
+					<p class="max-w-md text-slate-500 text-sm">
+						Chúng tôi thiết kế và vận hành các chiến dịch trên tinh thần tôn trọng bản sắc thương hiệu của từng đối tác khách hàng.
+					</p>
+				</div>
+
+				<!-- Projects Grid -->
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+					{projects.map((project, index) => (
+						<article class="reveal group overflow-hidden rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition hover:shadow-lg duration-300" style={`transition-delay: ${index * 80}ms`}>
+							<div class="overflow-hidden aspect-[4/3] relative">
+								<img class="w-full h-full object-cover transition duration-500 group-hover:scale-105" src={project.image} alt={project.title} />
+							</div>
+							<div class="p-6 space-y-2">
+								<span class="text-xs font-bold uppercase tracking-wider text-[#006876]">{project.category}</span>
+								<h3 class="text-lg font-bold text-deep-navy group-hover:text-[#006876] transition-colors leading-snug">{project.title}</h3>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Clients Section -->
+		<section class="py-16 bg-[#faf8ff] border-y border-slate-100">
+			<div class="section-shell grid items-center gap-12 lg:grid-cols-[.8fr_1.2fr]">
+				<div class="reveal space-y-3">
+					<div class="tag text-[#006876]">Đối tác</div>
+					<h2 class="text-3xl font-extrabold text-deep-navy">Các thương hiệu tin cậy đồng hành</h2>
+				</div>
+				<div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+					{clients.map((client, index) => (
+						<div class="reveal glass-panel flex min-h-20 items-center justify-center rounded-2xl border border-white/50 p-4 text-center font-bold text-slate-700 shadow-sm" style={`transition-delay: ${index * 55}ms`}>
+							{client}
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Form Section -->
+		<section id="contact" class="py-20 lg:py-32 bg-white">
+			<div class="section-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
+				<!-- Contact Info Block -->
+				<div class="reveal space-y-8">
+					<div class="space-y-4">
+						<div class="tag text-[#006876]">Liên hệ</div>
+						<h2 class="text-3xl font-extrabold text-deep-navy sm:text-4xl">Nhận tư vấn chiến lược miễn phí</h2>
+						<p class="text-slate-500 leading-relaxed max-w-md">
+							Vui lòng để lại thông tin liên lạc của bạn. Đội ngũ tư vấn của KIGI Agency sẽ nhanh chóng liên hệ hỗ trợ trong thời gian sớm nhất.
+						</p>
+					</div>
+
+					<div class="grid gap-4 max-w-md">
 						{contactItems.map((item) => (
-							<div class="flex gap-3 rounded-[10px] border border-[#1280d9]/10 bg-white/78 p-4 shadow-lg shadow-[#1280d9]/5">
-								<span class="grid size-11 shrink-0 place-items-center rounded-[10px] bg-[#e8f4ff] text-[#1280d9]">
+							<div class="flex gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4 shadow-sm">
+								<span class="grid size-11 shrink-0 place-items-center rounded-xl bg-[#e0f2fe] text-[#006876]">
 									<span class="contact-icon" set:html={item.icon}></span>
 								</span>
-								<div>
-									<p class="text-xs font-black uppercase tracking-[0.1em] text-[#1280d9]">{item.label}</p>
+								<div class="space-y-1">
+									<p class="text-xs font-bold uppercase tracking-wider text-slate-400">{item.label}</p>
 									{item.href ? (
-										<a class="mt-1 block break-words font-bold hover:text-[#1280d9]" href={item.href}>{item.text}</a>
+										<a class="block font-bold text-deep-navy hover:text-[#006876] transition-colors break-all" href={item.href}>{item.text}</a>
 									) : (
-										<p class="mt-1 font-bold leading-7">{item.text}</p>
+										<p class="font-bold text-deep-navy leading-relaxed">{item.text}</p>
 									)}
 								</div>
 							</div>
 						))}
 					</div>
 				</div>
-				<form class="reveal k-card p-6 md:p-8" action="mailto:info@kigiagency.com" method="post" enctype="text/plain">
-					<label class="mb-2 block text-sm font-black text-[#0b172a]" for="name">Họ và tên</label>
-					<input id="name" name="name" class="mb-5 w-full rounded-[10px] border border-[#1280d9]/12 bg-white px-4 py-4 outline-none transition focus:border-[#1280d9]" type="text" />
-					<label class="mb-2 block text-sm font-black text-[#0b172a]" for="phone">Số điện thoại</label>
-					<input id="phone" name="phone" class="mb-5 w-full rounded-[10px] border border-[#1280d9]/12 bg-white px-4 py-4 outline-none transition focus:border-[#1280d9]" type="tel" />
-					<label class="mb-2 block text-sm font-black text-[#0b172a]" for="message">Nội dung cần hỗ trợ</label>
-					<textarea id="message" name="message" class="mb-5 min-h-36 w-full rounded-[10px] border border-[#1280d9]/12 bg-white px-4 py-4 outline-none transition focus:border-[#1280d9]"></textarea>
-					<button class="button-focus w-full rounded-[10px] bg-[#1280d9] px-6 py-4 font-black text-white transition hover:-translate-y-1 hover:bg-[#0f6fc0]" type="submit">Gửi thông tin ngay</button>
+
+				<!-- Contact Form Block -->
+				<form class="reveal k-card p-8 space-y-6" action="mailto:info@kigiagency.com" method="post" enctype="text/plain">
+					<h3 class="text-2xl font-bold text-deep-navy">Gửi thông tin cho chúng tôi</h3>
+					
+					<div class="space-y-2">
+						<label class="text-sm font-bold text-slate-600" for="name">Họ và tên</label>
+						<input id="name" name="name" class="input input-bordered w-full rounded-xl bg-white border-slate-200 focus:border-[#006876] outline-none" type="text" required />
+					</div>
+					
+					<div class="space-y-2">
+						<label class="text-sm font-bold text-slate-600" for="phone">Số điện thoại</label>
+						<input id="phone" name="phone" class="input input-bordered w-full rounded-xl bg-white border-slate-200 focus:border-[#006876] outline-none" type="tel" required />
+					</div>
+					
+					<div class="space-y-2">
+						<label class="text-sm font-bold text-slate-600" for="message">Nội dung yêu cầu</label>
+						<textarea id="message" name="message" class="textarea textarea-bordered min-h-32 w-full rounded-xl bg-white border-slate-200 focus:border-[#006876] outline-none" required></textarea>
+					</div>
+					
+					<button class="btn btn-primary w-full rounded-xl text-white bg-gradient-to-r from-[#006876] to-[#00b3ff] border-0 hover:shadow-lg hover:scale-[1.01] transition-all py-4 h-auto" type="submit">
+						Gửi thông tin ngay
+					</button>
 				</form>
 			</div>
 		</section>
 	</main>
 
-	<footer class="bg-[#0b172a] text-white">
-		<div class="section-shell py-14">
-			<div class="mb-10 grid gap-6 rounded-[10px] border border-white/12 bg-white/[0.06] p-7 lg:grid-cols-[1.2fr_.8fr] lg:p-10">
+	<!-- Footer -->
+	<footer class="bg-deep-navy text-white">
+		<div class="section-shell py-16">
+			<!-- Banner Footer -->
+			<div class="mb-12 grid gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 lg:grid-cols-[1.2fr_.8fr] lg:p-12 backdrop-blur-sm">
 				<div>
-					<p class="text-sm font-black uppercase tracking-[0.16em] text-[#58b3ff]">KIGI Agency</p>
-					<h2 class="mt-4 text-balance text-3xl font-black md:text-4xl">Sẵn sàng nâng cấp thương hiệu của bạn?</h2>
-					<p class="mt-4 max-w-2xl leading-7 text-white/68">Để lại thông tin, KIGI Agency sẽ tư vấn giải pháp Website & Quảng cáo Online phù hợp nhất cho doanh nghiệp.</p>
+					<p class="text-sm font-bold uppercase tracking-wider text-[#00b3ff]">KIGI Agency</p>
+					<h2 class="mt-4 text-3xl font-extrabold md:text-4xl text-white">Sẵn sàng nâng cấp vị thế thương hiệu?</h2>
+					<p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
+						Liên hệ ngay với KIGI Agency để được tư vấn thiết kế Website chất lượng cao cùng gói dịch vụ truyền thông tối ưu doanh số.
+					</p>
 				</div>
 				<div class="flex flex-col gap-3 sm:flex-row lg:items-end lg:justify-end">
-					<a class="button-focus rounded-[10px] bg-[#1280d9] px-6 py-4 text-center font-black text-white" href="tel:0563555535">Gọi ngay</a>
-					<a class="button-focus rounded-[10px] bg-white px-6 py-4 text-center font-black text-[#1280d9]" href="mailto:info@kigiagency.com">Gửi email</a>
+					<a class="btn btn-primary rounded-full px-8 text-white bg-[#006876] border-0 hover:bg-[#004e59]" href="tel:0563555535">Gọi điện ngay</a>
+					<a class="btn btn-outline border-white/20 text-white hover:bg-white hover:text-deep-navy rounded-full px-8" href="mailto:info@kigiagency.com">Gửi Email</a>
 				</div>
 			</div>
-			<div class="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-4">
-				<div>
+
+			<!-- Links Grid -->
+			<div class="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4">
+				<div class="space-y-4">
 					<div class="flex items-center gap-3">
-						<span class="grid size-12 place-items-center rounded-[10px] bg-[#1280d9] font-black text-white">K</span>
+						<img src="/logo.jpg" alt="KIGI Agency Logo" class="h-10 w-auto rounded-lg object-contain bg-white p-1" />
 						<div>
-							<p class="text-2xl font-black tracking-[0.12em]">KIGI</p>
-							<p class="text-xs font-bold uppercase tracking-[0.26em] text-[#58b3ff]">Agency</p>
+							<p class="text-xl font-black tracking-wider text-white">KIGI</p>
+							<p class="text-[10px] font-bold uppercase tracking-widest text-[#00b3ff]">Agency</p>
 						</div>
 					</div>
-					<p class="mt-5 leading-7 text-white/68">Đơn vị đồng hành cùng doanh nghiệp trong thiết kế Website, sáng tạo nội dung và triển khai quảng cáo đa nền tảng.</p>
+					<p class="text-sm text-slate-400 leading-relaxed">
+						Đối tác tin cậy thiết kế Website chuẩn SEO và triển khai các giải pháp Marketing trực tuyến hiệu quả.
+					</p>
 				</div>
-				<div>
-					<h3 class="text-lg font-black">Menu</h3>
-					<ul class="mt-5 space-y-3 text-white/68">
-						{navItems.slice(0, 5).map((item) => (
+
+				<div class="space-y-4">
+					<h3 class="text-lg font-bold text-white">Menu nhanh</h3>
+					<ul class="space-y-2 text-sm text-slate-400">
+						{navItems.map((item) => (
 							<li>
-								<a class="flex items-center gap-2 hover:text-[#58b3ff]" href={item.href}>
-									<span class="menu-icon size-4" set:html={item.icon}></span>
-									<span>{item.label}</span>
-								</a>
+								<a class="hover:text-[#00b3ff] transition-colors" href={item.href}>{item.label}</a>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div>
-					<h3 class="text-lg font-black">Dịch vụ chính</h3>
-					<ul class="mt-5 space-y-3 text-white/68">
-						{serviceList.map((item) => <li>{item}</li>)}
+
+				<div class="space-y-4">
+					<h3 class="text-lg font-bold text-white">Dịch vụ cốt lõi</h3>
+					<ul class="space-y-2 text-sm text-slate-400">
+						<li>Thiết kế Website UI/UX chuẩn SEO</li>
+						<li>Quản lý Fanpage và sáng tạo content</li>
+						<li>Chạy quảng cáo Facebook / Google / TikTok</li>
+						<li>Sản xuất video ngắn Reels / TikTok</li>
+						<li>Tư vấn nhận diện thương hiệu</li>
 					</ul>
 				</div>
-				<div>
-					<h3 class="text-lg font-black">Thông tin liên hệ</h3>
-					<div class="mt-5 space-y-4 text-white/68">
-						{contactItems.map((item) => (
-							<div class="flex gap-3">
-								<span class="grid size-9 shrink-0 place-items-center rounded-[10px] bg-white/10 text-[#58b3ff]">
-									<span class="contact-icon size-4" set:html={item.icon}></span>
-								</span>
-								<div>
-									<p class="text-[11px] font-black uppercase tracking-[0.1em] text-white/42">{item.label}</p>
-									{item.href ? (
-										<a class="mt-1 block break-words hover:text-[#58b3ff]" href={item.href}>{item.text}</a>
-									) : (
-										<p class="mt-1 leading-7">{item.text}</p>
-									)}
-								</div>
-							</div>
-						))}
+
+				<div class="space-y-4">
+					<h3 class="text-lg font-bold text-white">Liên hệ trực tiếp</h3>
+					<div class="space-y-3 text-sm text-slate-400">
+						<p class="flex items-start gap-2">
+							<span class="font-bold text-white">Hotline:</span> 0563.555.535
+						</p>
+						<p class="flex items-start gap-2">
+							<span class="font-bold text-white">Email:</span> info@kigiagency.com
+						</p>
+						<p class="flex items-start gap-2">
+							<span class="font-bold text-white">Địa chỉ:</span> Số 25 - 26 Nguyễn Đình Chiểu, Phường Vĩnh Phước, TP. Nha Trang, Tỉnh Khánh Hòa
+						</p>
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-col gap-4 pt-8 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
+
+			<!-- Bottom Footer Bar -->
+			<div class="flex flex-col gap-4 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
 				<p>© 2026 KIGI Agency. All rights reserved.</p>
 				<div class="flex gap-6">
-					<a class="hover:text-white" href="#">Chính sách bảo mật</a>
-					<a class="hover:text-white" href="#">Điều khoản sử dụng</a>
+					<a class="hover:text-white transition-colors" href="#">Chính sách bảo mật</a>
+					<a class="hover:text-white transition-colors" href="#">Điều khoản sử dụng</a>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<div class="fixed bottom-5 right-4 z-50 flex flex-col gap-4 sm:right-6">
-		<a class="button-focus social-circle bg-[#0d87f2] text-white" href="https://zalo.me/0563555535" target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo">Z</a>
-		<a class="button-focus social-circle bg-[#ff37b7] text-white" href="mailto:info@kigiagency.com" aria-label="Gửi email">
-			<svg aria-hidden="true" viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+	<!-- Floating Contact Buttons (Contact Hub) -->
+	<div class="fixed bottom-5 right-4 z-50 flex flex-col gap-3.5 sm:right-6">
+		<a class="button-focus social-circle bg-[#00b3ff] text-white hover:scale-110" href="https://zalo.me/0563555535" target="_blank" rel="noreferrer" aria-label="Liên hệ Zalo">
+			<span class="font-extrabold text-lg">Zalo</span>
+		</a>
+		<a class="button-focus social-circle bg-[#ff37b7] text-white hover:scale-110" href="mailto:info@kigiagency.com" aria-label="Gửi email">
+			<svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 				<path d="M4 6h16v12H4z"></path>
 				<path d="m4 7 8 6 8-6"></path>
 			</svg>
 		</a>
-		<a class="button-focus social-circle bg-[#ffd21e] text-black" href="tel:0563555535" aria-label="Gọi KIGI">
-			<svg aria-hidden="true" viewBox="0 0 24 24" class="size-7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+		<a class="button-focus social-circle bg-[#ff811b] text-white hover:scale-110" href="tel:0563555535" aria-label="Gọi điện">
+			<svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 				<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.77a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.3-1.22a2 2 0 0 1 2.11-.45c.88.31 1.81.53 2.77.66A2 2 0 0 1 22 16.92z"></path>
 			</svg>
 		</a>
 	</div>
 
+	<!-- Interactive Scripts -->
 	<script>
 		const menuButton = document.querySelector(".menu-toggle");
 		const mobileMenu = document.querySelector("#mobile-menu");
@@ -479,17 +641,16 @@ const contactItems = [
 			const isOpen = menuButton.getAttribute("aria-expanded") === "true";
 			menuButton.setAttribute("aria-expanded", String(!isOpen));
 			mobileMenu?.classList.toggle("hidden", isOpen);
-			mobileMenu?.classList.toggle("mt-3", !isOpen);
 		});
 
 		mobileMenuLinks.forEach((link) => {
 			link.addEventListener("click", () => {
 				menuButton?.setAttribute("aria-expanded", "false");
 				mobileMenu?.classList.add("hidden");
-				mobileMenu?.classList.remove("mt-3");
 			});
 		});
 
+		// Scroll Animations
 		const animatedItems = document.querySelectorAll(".reveal");
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -500,7 +661,7 @@ const contactItems = [
 					}
 				});
 			},
-			{ threshold: 0.14 },
+			{ threshold: 0.1 }
 		);
 
 		animatedItems.forEach((item) => observer.observe(item));

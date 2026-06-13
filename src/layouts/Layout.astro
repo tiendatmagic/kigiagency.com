@@ -7,24 +7,20 @@ interface Props {
 }
 
 const {
-	title = "Công Ty TNHH KIGI Agency - Marketing & Website",
-	description = "KIGI Agency đồng hành cùng doanh nghiệp trong thiết kế Website, sáng tạo nội dung và triển khai quảng cáo đa nền tảng.",
+	title = "KIGI Agency - Giải Pháp Thiết Kế Website & Marketing Toàn Diện",
+	description = "KIGI Agency đồng hành cùng doanh nghiệp trong thiết kế Website chuẩn SEO, sáng tạo nội dung và triển khai quảng cáo đa nền tảng Facebook, Google, TikTok.",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/jpeg" href="/logo2.jpg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap&subset=vietnamese"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -32,7 +28,7 @@ const {
 			document.documentElement.classList.add("can-animate");
 		</script>
 	</head>
-	<body>
+	<body class="bg-base-100 text-base-content antialiased">
 		<slot />
 		<div class="noise" aria-hidden="true"></div>
 	</body>
